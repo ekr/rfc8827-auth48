@@ -903,6 +903,8 @@
           <bcp14>MUST</bcp14> favor cipher suites which support Forward Secrecy (FS)
           over non-FS cipher suites and <bcp14>SHOULD</bcp14> favor
           Authenticated Encryption with Associated Data (AEAD) over non-AEAD cipher suites.
+          Note: the IETF is in the process of standardizing DTLS 1.3
+          [TODO: RFCED please add an informative reference to the I-D.]
         </t>
         <t>
           Implementations <bcp14>MUST NOT</bcp14> implement DTLS renegotiation and <bcp14>MUST</bcp14> reject
