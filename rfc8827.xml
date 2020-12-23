@@ -353,8 +353,8 @@
         <t>
           This message is sent to the signaling server, e.g., by fetch()
           <xref target="fetch" format="default"/> or by WebSockets
-	  <xref target="RFC6455" format="default"/>, over TLS <xref
-	  target="RFC8446" format="default"/>.
+          <xref target="RFC6455" format="default"/>, over TLS <xref
+          target="RFC8446" format="default"/>.
           The signaling server processes the message from Alice's browser,
           determines that this is a call to Bob, and sends a signaling message to
           Bob's browser (again, the format is currently undefined).  The JS on
@@ -411,7 +411,7 @@
         <name>Media Consent Verification</name>
         <t>
           As described in <xref target="RFC8826" sectionFormat="comma"
-	  section="4.2"/>, media consent verification is provided via ICE.
+          section="4.2"/>, media consent verification is provided via ICE.
   Thus, Alice and
           Bob perform ICE checks with each other.  At the completion of these
           checks, they are ready to send non-ICE data.
@@ -435,7 +435,7 @@
           up a secure channel or channels. This is performed via DTLS <xref target="RFC6347" format="default"/>
           and DTLS-SRTP <xref target="RFC5763" format="default"/> keying for SRTP
           <xref target="RFC3711" format="default"/> for the media channel and
-	  the Stream Control Transmission Protocol (SCTP) over DTLS
+          the Stream Control Transmission Protocol (SCTP) over DTLS
           <xref target="RFC8261" format="default"/> for data
           channels. Specifically, Alice and Bob perform a DTLS handshake on
           every component which has been established by ICE. The total number of
@@ -547,7 +547,7 @@
       </t>
       <t>
          The identity-assertion value is a JSON encoded string
-	 <xref target="RFC8259" format="default"/>. The JSON object
+         <xref target="RFC8259" format="default"/>. The JSON object
          contains two keys: "assertion" and "idp". The "assertion" key value contains
          an opaque string that is consumed by the IdP. The "idp" key value contains a
          dictionary with one or two further values that identify the IdP. See
@@ -876,7 +876,7 @@
         </t>
         <t>
           All media channels <bcp14>MUST</bcp14> be secured via SRTP and the
-	  Secure Real-time Transport Control Protocol (SRTCP).  Media traffic <bcp14>MUST NOT</bcp14>
+          Secure Real-time Transport Control Protocol (SRTCP).  Media traffic <bcp14>MUST NOT</bcp14>
           be sent over plain (unencrypted) RTP or RTCP; that is, implementations <bcp14>MUST
           NOT</bcp14> negotiate cipher suites with NULL encryption modes.  DTLS-SRTP
           <bcp14>MUST</bcp14> be offered for every media channel.  WebRTC implementations <bcp14>MUST NOT</bcp14>
@@ -902,7 +902,7 @@
           Implementations
           <bcp14>MUST</bcp14> favor cipher suites which support Forward Secrecy (FS)
           over non-FS cipher suites and <bcp14>SHOULD</bcp14> favor
-	  Authenticated Encryption with Associated Data (AEAD) over non-AEAD cipher suites.
+          Authenticated Encryption with Associated Data (AEAD) over non-AEAD cipher suites.
         </t>
         <t>
           Implementations <bcp14>MUST NOT</bcp14> implement DTLS renegotiation and <bcp14>MUST</bcp14> reject
@@ -1085,7 +1085,7 @@
                 ending in "@example.com". Thus, "alice@example.com" is whoever
                 the operator says it is. Examples of systems with authoritative
                 identity providers include DNSSEC, an identity system for SIP
-		(see <xref target="RFC8224"/>), and Facebook
+                (see <xref target="RFC8224"/>), and Facebook
                 Connect (Facebook identities only make sense within the context
                 of the Facebook system).
               </dd>
@@ -1217,7 +1217,7 @@
                 The precise information from the signaling message that must be
                 cryptographically bound to the user's identity and a mechanism
                 for carrying assertions in JavaScript Session Establishment
-		Protocol (JSEP) messages. This is specified in
+                Protocol (JSEP) messages. This is specified in
                 <xref target="sec.jsep-binding" format="default"/>.
               </li>
           <li>
@@ -1665,7 +1665,7 @@ a=sendrecv
         <t>
             In order to protect against malicious content JavaScript, that
             JavaScript <bcp14>MUST NOT</bcp14> be allowed to have direct
-	    access to -- or perform
+            access to -- or perform
             computations with -- DTLS keys. For instance, if content JS were able
             to compute digital signatures, then it would be possible for content
             JS to get an identity assertion for a browser's generated key and
@@ -2127,12 +2127,12 @@ a=sendrecv
       <name>Acknowledgements</name>
       <t>
         <contact fullname="Bernard Aboba"/>, <contact fullname="Harald
-	Alvestrand"/>, <contact fullname="Richard Barnes"/>, <contact
-	fullname="Dan Druta"/>, <contact fullname="Cullen
+        Alvestrand"/>, <contact fullname="Richard Barnes"/>, <contact
+        fullname="Dan Druta"/>, <contact fullname="Cullen
         Jennings"/>, <contact fullname="Hadriel Kaplan"/>, <contact
-	fullname="Matthew Kaufman"/>, <contact fullname="Jim McEachern"/>,
-	<contact fullname="Martin Thomson"/>, <contact fullname="Magnus
-	Westerlund"/>.  <contact fullname="Matthew Kaufman"/> provided the UI material in
+        fullname="Matthew Kaufman"/>, <contact fullname="Jim McEachern"/>,
+        <contact fullname="Martin Thomson"/>, <contact fullname="Magnus
+        Westerlund"/>.  <contact fullname="Matthew Kaufman"/> provided the UI material in
         <xref target="sec.proposal.comsec" format="default"/>. <contact fullname="Christer Holmberg"/> provided
         the initial version of <xref target="sec.sdp-id-attr-oa" format="default"/>.
       </t>
