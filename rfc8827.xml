@@ -11,16 +11,8 @@
     <title abbrev="WebRTC Sec. Arch.">WebRTC Security Architecture</title>
     <seriesInfo name="RFC" value="8827"/>
     <author fullname="Eric Rescorla" initials="E." surname="Rescorla">
-      <organization>RTFM, Inc.</organization>
+      <organization>Mozilla</organization>
       <address>
-        <postal>
-          <street>2064 Edgewood Drive</street>
-          <city>Palo Alto</city>
-          <region>CA</region>
-          <code>94303</code>
-          <country>United States of America</country>
-        </postal>
-        <phone>+1 650 678 2350</phone>
         <email>ekr@rtfm.com</email>
       </address>
     </author>
