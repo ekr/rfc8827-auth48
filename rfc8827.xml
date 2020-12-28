@@ -61,7 +61,7 @@
                +-----------+            +-----------+ ]]></artwork>
       </figure>
       <t>
-        A more complicated system might allow for interdomain calling, as shown
+        A more complicated system might allow for inter-domain calling, as shown
         in <xref target="fig.multidomain" format="default"/>.  The protocol to be used between
         the domains is not standardized by WebRTC, but given the installed base
         and the form of the WebRTC API is likely to be something SDP-based like
@@ -197,8 +197,8 @@
         other parties. For instance, Alice might have an account with a social
         network which she can then use to authenticate to other Web sites
         without explicitly having an account with those sites; this is a fairly
-        conventional pattern on the Web. <xref target="sec.trust-relationships" format="default"/> provides an overview of Identity
-        Providers and the relevant terminology.  Alice and Bob might have
+        conventional pattern on the Web. <xref target="sec.trust-relationships" format="default"/> provides an overview of IdPs
+        and the relevant terminology.  Alice and Bob might have
         relationships with different IdPs as well.
       </t>
       <t>
@@ -295,7 +295,7 @@
           calls (we defer the discussion of device access permissions until
           later).  They are both connected to the calling service via HTTPS and
           so know the origin with some level of confidence. They also have
-          accounts with some identity provider.  This sort of identity service
+          accounts with some IdP.  This sort of identity service
           is becoming increasingly common in the Web environment (with technologies
           such as Federated Google Login, Facebook Connect, OAuth,
           OpenID, WebFinger), and is often provided as a side effect service of
@@ -329,16 +329,16 @@
         <ul spacing="normal">
           <li>
               Media channel information
-            </li>
+          </li>
           <li>
               Interactive Connectivity Establishment (ICE) <xref target="RFC8445" format="default"/> candidates
-            </li>
+          </li>
           <li>
               A "fingerprint" attribute binding the communication to a key pair
               <xref target="RFC5763" format="default"/>. Note that this key may simply be
               ephemerally generated for this call or specific to this domain,
               and Alice may have a large number of such keys.
-            </li>
+          </li>
         </ul>
         <t>
           Prior to sending out the signaling message, the PeerConnection code
@@ -360,7 +360,7 @@
           Bob's browser (again, the format is currently undefined).  The JS on
           Bob's browser processes it, and alerts Bob to the incoming call and to
           Alice's identity. In this case, Alice has provided an identity
-          assertion and so Bob's browser contacts Alice's identity provider
+          assertion and so Bob's browser contacts Alice's IdP
           (again, this is done in a generic way so the browser has no specific
           knowledge of the IdP) to verify the assertion. It is also possible
           to have IdPs with which the browser has a specific trust relationship,
@@ -500,7 +500,7 @@
       <t>
         The semantics of multiple "identity" attributes within an
         offer or answer are undefined.  Implementations <bcp14>SHOULD</bcp14> only include a
-        single "identity" attribute in an offer or answer, and relying parties
+        single "identity" attribute in an offer or answer, and Relying Parties
         <bcp14>MAY</bcp14> elect to ignore all but the first "identity" attribute.
       </t>
       <dl newline="false" spacing="normal">
@@ -662,10 +662,10 @@
         <ul spacing="normal">
           <li>
               Requests for one-time camera/microphone access.
-            </li>
+          </li>
           <li>
               Requests for permanent access.
-            </li>
+          </li>
         </ul>
         <t>
           Because HTTP origins cannot be securely established against network
@@ -697,7 +697,7 @@
               MediaStream.record()).  Combined with secure authentication of the
               communicating peer, this allows a user to be sure that the calling
               site is not accessing or modifying their conversion.
-            </dd>
+          </dd>
         </dl>
         <dl newline="false" spacing="normal">
           <dt>UI Requirement:</dt>
@@ -707,7 +707,7 @@
               and <bcp14>MUST</bcp14> clearly indicate how to terminate device access, and
               provide a UI means to immediately stop camera/microphone input
               without the JS being able to prevent it.
-            </dd>
+          </dd>
         </dl>
         <dl newline="false" spacing="normal">
           <dt>UI Requirement:</dt>
@@ -719,7 +719,7 @@
               input when the indication is hidden.  (Note: This may not be
               necessary in systems that are non-windows-based but that have good
               notifications support, such as phones.)
-            </dd>
+          </dd>
         </dl>
 
         <ul spacing="normal">
@@ -729,19 +729,19 @@
               permissions. Instead, they must require some other user action
               such as a permissions setting or an application install experience
               to grant permission to a site.
-            </li>
+          </li>
           <li>
               Browsers <bcp14>MUST</bcp14> provide a separate dialog request for
               screen/application sharing permissions even if the media request
               is made at the same time as the request for camera and microphone
               permissions.
-            </li>
+          </li>
           <li>
               The browser <bcp14>MUST</bcp14> indicate any windows which are currently being
               shared in some unambiguous way. Windows which are not visible <bcp14>MUST
               NOT</bcp14> be shared even if the application is being shared.  If the
               screen is being shared, then that <bcp14>MUST</bcp14> be indicated.
-            </li>
+          </li>
         </ul>
         <t>
           Browsers <bcp14>MAY</bcp14> permit the formation of data channels without any direct
@@ -758,12 +758,12 @@
         <ul spacing="normal">
           <li>
               Allow future calls to this verified user.
-            </li>
+          </li>
           <li>
               Allow future calls to any verified user who is in my system
               address book (this only works with address book integration, of
               course).
-            </li>
+          </li>
         </ul>
         <t>
           Implementations <bcp14>SHOULD</bcp14> also provide a different user interface
@@ -824,7 +824,7 @@
               enables a user to prevent a peer from learning their IP address if
               they elect not to answer a call and also from learning whether the
               user is online.
-            </dd>
+          </dd>
         </dl>
         <dl newline="false" spacing="normal">
           <dt>API Requirement:</dt>
@@ -834,7 +834,7 @@
               the peer from learning one's IP address at all.  This mechanism
               <bcp14>MUST</bcp14> also permit suppression of the related address field, since
               that leaks local addresses.
-            </dd>
+          </dd>
         </dl>
         <dl newline="false" spacing="normal">
           <dt>API Requirement:</dt>
@@ -850,7 +850,7 @@
               performance by reconfiguring to allow non-TURN candidates during
               an active call if the user decides they no longer need to hide
               their IP address.
-            </dd>
+          </dd>
         </dl>
         <t>
           Note that some enterprises may operate proxies and/or NATs designed to
@@ -863,7 +863,7 @@
         <t>
           Note: These requirements are intended to allow sites to conceal the
           user's IP address from the peer. For guidance on concealing the
-          user's IP address from the calling site see [RFCED: Citation to RFC 8828]
+          user's IP address from the calling site see <xref target="RFC8828"/>.
         </t>
       </section>
       <section anchor="sec.proposal.comsec" numbered="true" toc="default">
@@ -904,7 +904,7 @@
           over non-FS cipher suites and <bcp14>SHOULD</bcp14> favor
           Authenticated Encryption with Associated Data (AEAD) over non-AEAD cipher suites.
           Note: the IETF is in the process of standardizing DTLS 1.3
-          [TODO: RFCED please add an informative reference to the I-D.]
+          <xref target="I-D.ietf-tls-dtls13"/>.
         </t>
         <t>
           Implementations <bcp14>MUST NOT</bcp14> implement DTLS renegotiation and <bcp14>MUST</bcp14> reject
@@ -916,26 +916,26 @@
           <dd>
               The API <bcp14>MUST</bcp14> generate a new authentication key pair for every new
               call by default.  This is intended to allow for unlinkability.
-            </dd>
+          </dd>
           <dt>API Requirement:</dt>
           <dd>
               The API <bcp14>MUST</bcp14> provide a means to reuse a key pair for calls.  This
               can be used to enable key continuity-based authentication, and
               could be used to amortize key generation costs.
-            </dd>
+          </dd>
           <dt>API Requirement:</dt>
           <dd>
               Unless
               the user specifically configures an external key pair, different
               key pairs <bcp14>MUST</bcp14> be used for each origin. (This avoids creating a
               super-cookie.)
-            </dd>
+          </dd>
           <dt>API Requirement:</dt>
           <dd>
               When DTLS-SRTP is used, the API <bcp14>MUST NOT</bcp14> permit the JS to obtain
               the negotiated keying material. This requirement preserves the
               end-to-end security of the media.
-            </dd>
+          </dd>
         </dl>
         <dl newline="false" spacing="normal">
           <dt>UI Requirements:</dt>
@@ -943,12 +943,12 @@
               A user-oriented client <bcp14>MUST</bcp14> provide an "inspector" interface which
               allows the user to determine the "security characteristics" of the
               media.
-            </dd>
+          </dd>
           <dt/>
           <dd>
               The following properties <bcp14>SHOULD</bcp14> be displayed "up-front" in the
               browser chrome, i.e., without requiring the user to ask for them:
-            </dd>
+          </dd>
           <dt/>
           <dd>
             <ul spacing="normal">
@@ -956,12 +956,12 @@
                   A client <bcp14>MUST</bcp14> provide a user interface through which a user
                   may determine the "security characteristics" for
                   currently displayed audio and video stream(s).
-                </li>
+              </li>
               <li>
                   A client <bcp14>MUST</bcp14> provide a user interface through which a user
                   may determine the "security characteristics" for transmissions
                   of their microphone audio and camera video.
-                </li>
+              </li>
               <li>
                   If the far endpoint was directly verified, either via a
                   third-party verifiable X.509 certificate or via a Web IdP
@@ -969,31 +969,31 @@
                   characteristics" <bcp14>MUST</bcp14> include the verified information.  X.509
                   identities and Web IdP identities have similar semantics and
                   should be displayed in a similar way.
-                </li>
+              </li>
             </ul>
           </dd>
           <dt/>
           <dd>
               The following properties are more likely to require some
               "drill-down" from the user:
-            </dd>
+          </dd>
           <dt/>
           <dd>
             <ul spacing="normal">
               <li>
                   The "security characteristics" <bcp14>MUST</bcp14> indicate the cryptographic
                   algorithms in use (for example, "AES-CBC").
-                </li>
+              </li>
               <li>
                   The "security characteristics" <bcp14>MUST</bcp14> indicate whether FS is
                   provided.
-                </li>
+              </li>
               <li>
                   The "security characteristics" <bcp14>MUST</bcp14> include some mechanism to
                   allow an out-of-band verification of the peer, such as a
                   certificate fingerprint or a Short Authentication String (SAS).
                   These are compared by the peers to authenticate one another.
-                </li>
+              </li>
             </ul>
           </dd>
         </dl>
@@ -1015,9 +1015,9 @@
           Recently, a number of Web-based identity technologies (OAuth,
           Facebook Connect, etc.) have been developed. While the
           details vary, what these technologies share is that they have a
-          Web-based (i.e., HTTP/HTTPS) identity provider which attests to Alice's
+          Web-based (i.e., HTTP/HTTPS) IdP which attests to Alice's
           identity. For instance, if Alice has an account at example.org, Alice could
-          use the example.org identity provider to prove to others that Alice is
+          use the example.org IdP to prove to others that Alice is
           alice@example.org.  The development of these technologies allows us to
           separate calling from identity provision: Alice could call you on a
           poker site but identify herself as alice@example.org.
@@ -1025,7 +1025,7 @@
       <t>
           Whatever the underlying technology, the general principle is that the
           party which is being authenticated is NOT the signaling site but
-          rather the user (and their browser). Similarly, the relying party is
+          rather the user (and their browser). Similarly, the Relying Party is
           the browser and not the signaling site.  Thus, the browser <bcp14>MUST</bcp14>
           generate the input to the IdP assertion process and
           display the results of the verification process to the user
@@ -1051,15 +1051,15 @@
           <dt>Authenticating Party (AP):</dt>
           <dd>
                 The entity which is trying to establish its identity.
-              </dd>
+          </dd>
           <dt>Identity Provider (IdP):</dt>
           <dd>
                 The entity which is vouching for the AP's identity.
-              </dd>
+          </dd>
           <dt>Relying Party (RP):</dt>
           <dd>
                 The entity which is trying to verify the AP's identity.
-              </dd>
+          </dd>
         </dl>
         <t>
             The AP and the IdP have an account relationship of some kind: the AP
@@ -1086,11 +1086,11 @@
                 operator of "example.com" has complete control of the namespace
                 ending in "@example.com". Thus, "alice@example.com" is whoever
                 the operator says it is. Examples of systems with authoritative
-                identity providers include DNSSEC, an identity system for SIP
+                IdPs include DNSSEC, an identity system for SIP
                 (see <xref target="RFC8224"/>), and Facebook
                 Connect (Facebook identities only make sense within the context
                 of the Facebook system).
-              </dd>
+          </dd>
           <dt>Third-Party:</dt>
           <dd>
                 IdPs which don't have control of their section of the identity
@@ -1099,10 +1099,10 @@
                 actually control the namespace, RPs need to trust that the IdP
                 is correctly verifying AP identities, and there can potentially
                 be multiple IdPs attesting to the same section of the identity
-                space. Probably the best-known example of a third-party identity
-                provider is SSL/TLS certificates, where there are a large number of
+                space. Probably the best-known example of a third-party IdP
+                is SSL/TLS certificates, where there are a large number of
                 certificate authorities (CAs) all of whom can attest to any domain name.
-              </dd>
+          </dd>
         </dl>
         <t>
             If an AP is authenticating via an authoritative IdP, then the RP
@@ -1144,10 +1144,10 @@
         <ul spacing="normal">
           <li>
                 Identity assertion generation.
-              </li>
+          </li>
           <li>
                 Identity assertion verification.
-              </li>
+          </li>
         </ul>
         <t>
             The same IdP JS "endpoint" is used for both functions, but of course
@@ -1187,19 +1187,19 @@
                 proxy. This allows the IdP to load whatever JS is necessary into
                 the proxy.  The resulting code runs in the IdP's security
                 context.
-              </li>
+          </li>
           <li>
                 The IdP registers an object with the browser that conforms to
                 the API defined in <xref target="webrtc-api" format="default"/>.
-              </li>
+          </li>
           <li>
                 The browser invokes methods on the object registered by the IdP
                 proxy to create or verify identity assertions.
-              </li>
+          </li>
         </ol>
         <t>
             This approach allows us to decouple the browser from any particular
-            identity provider; the browser need only know how to load the IdP's
+            IdP; the browser need only know how to load the IdP's
             JavaScript -- the location of which is determined based on the IdP's
             identity -- and to call the generic API for requesting and verifying
             identity assertions. The IdP provides whatever logic is necessary to
@@ -1221,11 +1221,11 @@
                 for carrying assertions in JavaScript Session Establishment
                 Protocol (JSEP) messages. This is specified in
                 <xref target="sec.jsep-binding" format="default"/>.
-              </li>
+          </li>
           <li>
                 The interface to the IdP, which is defined in the companion W3C
                 WebRTC API specification <xref target="webrtc-api" format="default"/>.
-              </li>
+          </li>
         </ul>
         <t>
             The WebRTC API specification also defines JavaScript interfaces that
@@ -1337,7 +1337,7 @@ a=sendrecv
           <dd>
                        The <xref target="RFC3986" format="default"> authority</xref> at which the
                        IdP's service is hosted.
-                  </dd>
+          </dd>
           <dt>protocol:</dt>
           <dd>
                     The specific IdP protocol which the IdP is using. This is a
@@ -1345,7 +1345,7 @@ a=sendrecv
                     implement two protocols in parallel. This value may be the
                     empty string.  If no value for protocol is provided, a value
                     of "default" is used.
-                  </dd>
+          </dd>
         </dl>
         <t>
                 Each IdP <bcp14>MUST</bcp14> serve its initial entry page (i.e., the one loaded
@@ -1357,13 +1357,13 @@ a=sendrecv
         <ol spacing="normal" type="1">
           <li>
                     The scheme, "https:".  An IdP <bcp14>MUST</bcp14> be loaded using <xref target="RFC2818" format="default">HTTPS</xref>.
-                  </li>
+          </li>
           <li>
                     The <xref target="RFC3986" format="default">authority</xref>.  As noted above,
                     the authority <bcp14>MAY</bcp14> contain a  non-default port number or
                     userinfo sub-component.  Both are removed when determining
                     if an asserted identity matches the name of the IdP.
-                  </li>
+          </li>
           <li>
                     The path, starting with "/.well-known/idp-proxy/" and
                     appended with the IdP protocol.  Note that the separator
@@ -1372,7 +1372,7 @@ a=sendrecv
                     requests outside of the controlled "/.well-known/" prefix.
                     Query and fragment values <bcp14>MAY</bcp14> be used by including '?' or
                     '#' characters.
-                  </li>
+          </li>
         </ol>
         <t>
                 For example, for the IdP "identity.example.com" and the protocol
@@ -1383,7 +1383,7 @@ a=sendrecv
 
         <t>
                 The IdP <bcp14>MAY</bcp14> redirect requests to this URL, but they <bcp14>MUST</bcp14> retain
-                the "https" scheme.  This changes the effective origin of the
+                the "https:" scheme.  This changes the effective origin of the
                 IdP, but not the domain of the identities that the IdP is
                 permitted to assert and validate. I.e., the IdP is still
                 regarded as authoritative for the original domain.
@@ -1401,12 +1401,12 @@ a=sendrecv
           <ul spacing="normal">
             <li>
                       Provided by the user directly.
-                    </li>
+            </li>
             <li>
                       Selected from some set of IdPs known to the calling site
                       (e.g., a button that shows "Authenticate via Facebook
                       Connect").
-                    </li>
+            </li>
           </ul>
         </section>
         <section numbered="true" toc="default">
@@ -1457,13 +1457,13 @@ a=sendrecv
                     The domain name of an IdP and the protocol string.  This <bcp14>MAY</bcp14>
                     identify a different IdP or protocol from the one that
                     generated the assertion.
-                  </dd>
+          </dd>
           <dt>assertion:</dt>
           <dd>
                     An opaque value containing the assertion itself. This is
                     only interpretable by the identified IdP or the IdP code
                     running in the client.
-                  </dd>
+          </dd>
         </dl>
         <t>
                 <xref target="fig.assert-ex" format="default"/> shows an example assertion
@@ -1551,12 +1551,12 @@ a=sendrecv
         <dd>
                     The identity of the AP from the IdP's perspective. Details
                     of this are provided in <xref target="sec.id-format" format="default"/>.
-                  </dd>
+        </dd>
         <dt>contents:</dt>
         <dd>
                     The original unmodified string provided by the AP as input
                     to the assertion generation process.
-                  </dd>
+        </dd>
       </dl>
       <t>
                 <xref target="fig.verify-ex" format="default"/> shows an example response,
@@ -1589,7 +1589,7 @@ a=sendrecv
                       IdP is authoritative for this domain.  Comparison of
                       domain names is done using the label equivalence rule
                       defined in <xref target="RFC5890" sectionFormat="of" section="2.3.2.4"/>.
-                    </li>
+          </li>
           <li>
             <t>
                       If the "domain" portion of the string is not equal to the
@@ -1600,11 +1600,11 @@ a=sendrecv
               <li>
                           the IdP domain is trusted as an acceptable third-party
                           IdP; and
-                        </li>
+              </li>
               <li>
                           local policy is configured to trust this IdP domain
                           for the domain portion of the identity string.
-                        </li>
+              </li>
             </ol>
           </li>
         </ol>
@@ -1660,7 +1660,7 @@ a=sendrecv
             X.509 certificates or a third-party IdP) rely on the security of the
             third party -- this is of course also true of the user's connection to the
             Web site itself. Users who wish to assure themselves of security
-            against a malicious identity provider can only do so by verifying
+            against a malicious IdP can only do so by verifying
             peer credentials directly, e.g., by checking the peer's fingerprint
             against a value delivered out of band.
         </t>
@@ -1692,11 +1692,11 @@ a=sendrecv
         <ul spacing="normal">
           <li>
                 Users to participate in calls without revealing their location.
-              </li>
+          </li>
           <li>
                 Potential callees to avoid revealing their location and even
                 presence status prior to agreeing to answer a call.
-              </li>
+          </li>
         </ul>
         <t>
             However, these privacy protections come at a performance cost in
@@ -1955,6 +1955,9 @@ a=sendrecv
     </section>
   </middle>
   <back>
+
+  <displayreference target="I-D.ietf-tls-dtls13" to="TLS-DTLS13"/>
+
     <references>
       <name>References</name>
       <references>
@@ -2009,7 +2012,7 @@ a=sendrecv
  <seriesInfo name="DOI" value="10.17487/RFC8826"/>
  </reference>
 
-<!-- draft-ietf-rtcweb-rtp-usage; RFC 8834 -->
+<!-- draft-ietf-rtcweb-rtp-usage: RFC 8834 -->
 <reference anchor="RFC8834" target="https://www.rfc-editor.org/info/rfc8834">
   <front>
     <title>Media Transport and Use of RTP in WebRTC</title>
@@ -2028,7 +2031,7 @@ a=sendrecv
   <seriesInfo name="DOI" value="10.17487/RFC8834"/>
 </reference>
 
-<!-- draft-ietf-mmusic-sdp-uks; RFC 8844 -->
+<!-- draft-ietf-mmusic-sdp-uks: RFC 8844 -->
 <reference anchor='RFC8844' target="https://www.rfc-editor.org/info/rfc8844">
 <front>
 <title>Unknown Key-Share Attacks on Uses of TLS with the Session Description Protocol (SDP)</title>
@@ -2044,7 +2047,7 @@ a=sendrecv
 <seriesInfo name="DOI" value="10.17487/RFC8844"/>
 </reference>
 
-<!-- draft-ietf-rtcweb-jsep; RFC 8829 -->
+<!-- draft-ietf-rtcweb-jsep: RFC 8829 -->
  <reference anchor="RFC8829" target="https://www.rfc-editor.org/info/rfc8829">
  <front>
  <title>JavaScript Session Establishment Protocol (JSEP)</title>
@@ -2114,6 +2117,22 @@ a=sendrecv
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6120.xml"/>
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8224.xml"/>
 
+<!-- draft-ietf-rtcweb-ip-handling (RFC 8828) -->
+<reference anchor="RFC8828" target="https://www.rfc-editor.org/info/rfc8828">
+  <front>
+    <title>WebRTC IP Address Handling Requirements</title>
+    <author initials="J" surname="Uberti" fullname="Justin Uberti">
+      <organization />
+    </author>
+    <date month="December" year="2020" />
+  </front>
+  <seriesInfo name="RFC" value="8828" />
+  <seriesInfo name="DOI" value="10.17487/RFC8828"/>
+</reference>
+
+<!-- draft-ietf-tls-dtls13 (AD Eval/Revised I-D needed) -->
+        <xi:include href="https://datatracker.ietf.org/doc/bibxml3/reference.I-D.draft-ietf-tls-dtls13-39.xml"/>
+
         <reference anchor="fetch" target=" https://fetch.spec.whatwg.org/">
           <front>
             <title>Fetch</title>
@@ -2140,34 +2159,4 @@ a=sendrecv
       </t>
     </section>
   </back>
-
-<!-- [rfced] Please let us know how/if the following should be
-made consistent:
-
- interdomain ("interdomain calling") /
-   inter-domain ("inter-domain protocol")
-     (Usage post-RFC 6000 is mixed but leans heavily toward
-     "inter-domain.")
-
-ANSWER: OK.
-
- Identity Providers ("overview of Identity Providers and the relevant
-   terminology") / identity providers
-
-   The rest of this document, and the rest of the documents in
-     Cluster 238, use the lowercase form.  Changing "overview of
-     Identity Providers" to "overview of IdPs" in this document would
-     resolve this issue.
-
-ANSWER: OK
-
- Relying Party (Section 4) / relying party (Section 7)
-
-ANSWER: OK.
-
- "https:" (The scheme, "https:") / "https" scheme (the "https" scheme)
-
-ANSWER: OK.
--->
-
 </rfc>
