@@ -200,6 +200,9 @@
         conventional pattern on the Web. <xref target="sec.trust-relationships" format="default"/> provides an overview of IdPs
         and the relevant terminology.  Alice and Bob might have
         relationships with different IdPs as well.
+        Note: The IdP mechanism described here has not seen wide adoption.
+        See <xref target="sec.generic.idp"/> for more on the status of
+        IdP-based authentication.
       </t>
       <t>
         This separation of identity provision and signaling isn't particularly
@@ -1001,6 +1004,13 @@
     </section>
     <section anchor="sec.generic.idp" numbered="true" toc="default">
       <name>Web-Based Peer Authentication</name>
+      <t>
+        NOTE: The mechanism described in this section was designed relatively
+        early in the RTCWEB process. In retrospect, the WG was too optimistic
+        about the enthusiasm for this kind of mechanism. At the time of publication,
+        it has not been widely adopted or implemented. It appears in this document
+        as a description of the state of the art as of this writing.
+      </t>
       <t>
           In a number of cases, it is desirable for the endpoint (i.e., the
           browser) to be able to directly identify the endpoint on the other
