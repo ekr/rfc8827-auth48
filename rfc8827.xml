@@ -16,7 +16,7 @@
         <email>ekr@rtfm.com</email>
       </address>
     </author>
-    <date month="December" year="2020"/>
+    <date month="January" year="2021"/>
 
     <abstract>
       <t>
@@ -2003,7 +2003,7 @@ a=sendrecv
     <author initials="H." surname="Alvestrand" fullname="Harald T. Alvestrand">
       <organization />
     </author>
-    <date month="December" year="2020" />
+    <date month="January" year="2021" />
   </front>
   <seriesInfo name="RFC" value="8825" />
   <seriesInfo name="DOI" value="10.17487/RFC8825"/>
@@ -2016,7 +2016,7 @@ a=sendrecv
  <author initials='E.' surname='Rescorla' fullname='Eric Rescorla'>
    <organization/>
  </author>
- <date month='December' year='2020'/>
+ <date month='January' year='2021'/>
  </front>
  <seriesInfo name="RFC" value="8826"/>
  <seriesInfo name="DOI" value="10.17487/RFC8826"/>
@@ -2035,7 +2035,7 @@ a=sendrecv
     <author initials="J." surname="Ott" fullname="Jörg Ott">
       <organization />
     </author>
-    <date month="December" year="2020" />
+    <date month="January" year="2021" />
   </front>
   <seriesInfo name="RFC" value="8834" />
   <seriesInfo name="DOI" value="10.17487/RFC8834"/>
@@ -2051,7 +2051,7 @@ a=sendrecv
 <author initials='E' surname='Rescorla' fullname='Eric Rescorla'>
     <organization />
 </author>
-<date month="December" year="2020"/>
+<date month="January" year="2021"/>
 </front>
 <seriesInfo name="RFC" value="8844"/>
 <seriesInfo name="DOI" value="10.17487/RFC8844"/>
@@ -2071,7 +2071,7 @@ a=sendrecv
          role="editor">
  <organization/>
  </author>
- <date month='December' year='2020'/>
+ <date month='January' year='2021'/>
  </front>
  <seriesInfo name="RFC" value="8829"/>
  <seriesInfo name="DOI" value="10.17487/RFC8829"/>
@@ -2134,7 +2134,10 @@ a=sendrecv
     <author initials="J" surname="Uberti" fullname="Justin Uberti">
       <organization />
     </author>
-    <date month="December" year="2020" />
+    <author initials="G" surname="Shieh" fullname="Guo-wei Shieh">
+      <organization />
+    </author>
+    <date month="January" year="2021" />
   </front>
   <seriesInfo name="RFC" value="8828" />
   <seriesInfo name="DOI" value="10.17487/RFC8828"/>
